@@ -39,6 +39,7 @@ $(() => {
             const $modalContent = $('<div>').attr('id', 'modal-content')
             const $closeModal = $('<a>').attr('id', 'close').attr('href', '#').text('Close')
             const $modalHeader = $('<h1>').text('About this bird')
+            const $modalIframe = $('<iframe>').attr('src', "https://www.allaboutbirds.org/news/").attr('id', 'iFrame')
 
 
             $('#results').append($birdDiv)
@@ -50,6 +51,7 @@ $(() => {
             $modal.append($modalContent)
             $modalContent.append($closeModal)
             $modalContent.append($modalHeader)
+            $modalContent.append($modalIframe)
 
 
             const openLearnMore = () => {
@@ -93,8 +95,7 @@ $(() => {
 
         )
 
-        // $('input[type="submit"]').trigger($('#results').empty())
-        // $('input[type="submit"]').trigger('reset', event)
+
         $(event.currentTarget).trigger('reset', $('#results').empty())
 
 
