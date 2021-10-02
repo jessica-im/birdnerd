@@ -27,25 +27,28 @@ Live List Feed
             -I could push from the original array, just bird name & location of each object into an object in a new array and then do set()?
             -https://stackoverflow.com/questions/2218999/how-to-remove-all-duplicates-from-an-array-of-objects
 
+            Using the data, push the
+
 Learn More Button
+    -This Learn More button upon creation needs to have an id
     -To open on click to modal
 
 Modal
+    -https://git.generalassemb.ly/Software-Engineering-Immersive-Remote/SEIR-Beaker/tree/master/unit_1/w03d01/morning_exercise
     -Clickable website page to All About Birds on that specific bird
     *Need to consider grabbing Bird Name from API and adding in _ for spaces to plug into https://www.allaboutbirds.org/guide/(insert bird name here)
         -https://www.developintelligence.com/blog/2016/02/replace-spaces-underscores-javascript/
+        -https://stackoverflow.com/questions/5660263/how-to-display-an-iframe-inside-a-jquery-ui-dialog
 
 
 /////////////////////////
 //Schedule
 ////////////////////////
 
-
 Friday 10/1
 1. Work through showing results on website from one specific state
     -On submit click, I need to be able to create an element with that bird name, location, and learn more button. I can make a function that loops through the objects results and pulls the properties from each object I want. Then, I need to append to the results container.
 2. Parse out duplicate results with same bird & location
-
 
 Saturday 10/2
 1. If above is completed...
