@@ -25,15 +25,20 @@
 
 #modal-content{
     background-color: white;
-    height: 350px;
-    width: 550px;
+    /* height: 350px;
+    width: 550px; */
+    height: 100%;
+    width: 100%;
     border-radius: 2px;
     margin: 150px auto;
     box-shadow: 0 2px 2px rgba(0,0,0,0.2);
 }
 
 #iFrame{
-    height: 350px;
-    width: 550px;
+    height: 100%;
+    width: 100%;
+    border: none;
+    display: block;
+    overflow: hidden;
 
 }

@@ -25,10 +25,13 @@ $(() => {
         })
     }
 
+    //This is to remove duplicate records
+
+
 
     //This is to render the data into appropriate tags
     const render = (results) => {
-        console.log(results)
+        // console.log(results)
         for (let i = 0; i < 1; i++){ //results.length
             const $birdDiv = $('<div>').addClass('bird-div')
             const $birdName = $('<p>').text(results[i].comName).addClass('bird-name')
@@ -41,7 +44,7 @@ $(() => {
             const $modalHeader = $('<h1>').text('About this bird')
 
             const birdNameURL = (results[i].comName).replace(" ", "_").replace("'", "")
-            console.log(birdNameURL);
+            // console.log(birdNameURL);
             const birdURL = `https://www.allaboutbirds.org/guide/${birdNameURL}`
             const $modalIframe = $('<iframe>').attr('src', birdURL).attr('id', 'iFrame')
 
@@ -74,7 +77,7 @@ $(() => {
         event.preventDefault()
 
         const $userInput = $('select').val()
-        console.log($userInput);
+        // console.log($userInput);
 
 
         $.ajax(
@@ -85,7 +88,7 @@ $(() => {
             }
         ).then(
             (data) => {
-                console.log(data);
+                // console.log(data);
                 consolidate(data)
                 // console.log(data)
 

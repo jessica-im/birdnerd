@@ -57,7 +57,7 @@ Saturday 10/2
 
 Sunday 10/3
 1. If above is completed...
-2. Work on populating modal with website to specific bird
+<!-- 2. Work on populating modal with website to specific bird -->
 
 Monday 10/4
 1. Start the CSS

@@ -55,9 +55,18 @@ for (let i = 0; i < data.length; i++) {
     let compositeKey = data[i].comName + data[i].county
     data[i].compositeKey = compositeKey
 }
-console.log(data);
-
-const parseDupes = () => {
-    if (compositeKey)
-}
-Now that I was able to combine and push in a new property that combines two strings. I can run a condition where if that key matches in any other objects, remove duplicates. 
+//
+// console.log(data);
+//
+// https://dev.to/marinamosti/removing-duplicates-in-an-array-of-objects-in-js-with-sets-3fep
+const filteredArr = data.reduce((acc, current) => {
+    const x = acc.find(item => item.compositeKey === current.compositeKey);
+    if (!x) {
+        return acc.concat([current]);
+    } else {
+        return acc;
+    }
+}, []);
+//
+console.log(filteredArr);
+// Now that I was able to combine and push in a new property that combines two strings. I can run a condition where if that key matches in any other objects, remove duplicates.
