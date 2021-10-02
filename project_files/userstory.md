@@ -46,14 +46,14 @@ Modal
 ////////////////////////
 
 Friday 10/1
-1. Work through showing results on website from one specific state
-    -On submit click, I need to be able to create an element with that bird name, location, and learn more button. I can make a function that loops through the objects results and pulls the properties from each object I want. Then, I need to append to the results container.
+<!-- 1. Work through showing results on website from one specific state
+    -On submit click, I need to be able to create an element with that bird name, location, and learn more button. I can make a function that loops through the objects results and pulls the properties from each object I want. Then, I need to append to the results container. -->
 2. Parse out duplicate results with same bird & location
 
 Saturday 10/2
 1. If above is completed...
-2. Make the input value change the api url dynamically
-3. Work on making a modal show up with a static website
+<!-- 2. Make the input value change the api url dynamically
+3. Work on making a modal show up with a static website -->
 
 Sunday 10/3
 1. If above is completed...

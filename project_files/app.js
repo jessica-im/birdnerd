@@ -29,7 +29,7 @@ $(() => {
     //This is to render the data into appropriate tags
     const render = (results) => {
         console.log(results)
-        for (let i = 0; i < results.length; i++){ //results.length
+        for (let i = 0; i < 1; i++){ //results.length
             const $birdDiv = $('<div>').addClass('bird-div')
             const $birdName = $('<p>').text(results[i].comName).addClass('bird-name')
             const $birdLocation = $('<p>').text(results[i].locName).addClass('bird-location')
@@ -39,7 +39,11 @@ $(() => {
             const $modalContent = $('<div>').attr('id', 'modal-content')
             const $closeModal = $('<a>').attr('id', 'close').attr('href', '#').text('Close')
             const $modalHeader = $('<h1>').text('About this bird')
-            const $modalIframe = $('<iframe>').attr('src', "https://www.allaboutbirds.org/news/").attr('id', 'iFrame')
+
+            const birdNameURL = (results[i].comName).replace(" ", "_").replace("'", "")
+            console.log(birdNameURL);
+            const birdURL = `https://www.allaboutbirds.org/guide/${birdNameURL}`
+            const $modalIframe = $('<iframe>').attr('src', birdURL).attr('id', 'iFrame')
 
 
             $('#results').append($birdDiv)
@@ -72,6 +76,7 @@ $(() => {
         const $userInput = $('select').val()
         console.log($userInput);
 
+
         $.ajax(
             {
                 url: `https://api.ebird.org/v2/data/obs/US-${$userInput}/recent/notable?detail=full&back=1`,
@@ -80,7 +85,7 @@ $(() => {
             }
         ).then(
             (data) => {
-
+                console.log(data);
                 consolidate(data)
                 // console.log(data)
 
