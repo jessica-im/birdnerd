@@ -8,9 +8,9 @@
 
 }
 
-select {
+/* select {
     font-size: 50px;
-}
+} */
 
 
 html {
@@ -104,6 +104,8 @@ nav .birdyworld {
 #birdkey-bar div {
     /* flex-grow: 1; */
     width: 25%;
+    background-color: thistle;
+    margin: 5px;
 }
 
 .tooltip {
@@ -125,6 +127,11 @@ nav .birdyworld {
 
 .tooltip:hover .tooltiptext {
     visibility: visible;
+}
+
+#results {
+    max-height: 700px;
+    overflow-y: auto;
 }
 
 .bird-div {

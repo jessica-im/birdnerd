@@ -125,6 +125,7 @@ $(() => {
                         return acc;
                     }
                 }, []);
+                filteredArr.sort((a, b) => (a.subnational2Name > b.subnational2Name) ? 1 : -1)
                 render(filteredArr)
             },
             () => {
