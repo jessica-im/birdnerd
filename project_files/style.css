@@ -1,16 +1,38 @@
+@media (max-width: 480px) {
+    select {
+        font-size: 2em;
+        max-width: 90%;
+    }
+    body {
+        display: flex;
+        justify-content: center;
+        max-width: 100%;
+        max-height: 95%;
+        background-color: whitesmoke;
+        overflow-x: hidden;
+    }
+    #container {
+        /* max-width: 90%; */
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: stretch;
+        background: thistle;
+    }
+    #results {
+        background: white;
+    }
+}
+
+
 * {
     text-align: center;
-    font-family: 'Pangolin'
-
+    font-family: 'Pangolin';
+    max-width: 100vw;
+    max-height: 100vh;
+    /* width: 100%; */
 }
-
-@media (min-width: 480px) {
-
-}
-
-/* select {
-    font-size: 50px;
-} */
 
 
 html {
@@ -35,6 +57,8 @@ html {
 
 #container {
     margin-top: 0px;
+    /* width: 100vw;
+    height: 100vh; */
 }
 
 nav {
@@ -51,6 +75,7 @@ nav {
 nav h1 {
     font-size: 1.5em;
     animation: color-change 5s infinite;
+    font-weight: bold;
 }
 
 nav .earth {
@@ -63,6 +88,7 @@ nav .birdyworld {
     padding-right: 10px;
     height: 40px;
     width: 40px;
+    border-radius: 50%;
 }
 
 @keyframes color-change {
@@ -97,12 +123,12 @@ nav .birdyworld {
     align-items: center;
     justify-content: space-evenly;
     padding-top: 10px;
-    font-size: 1.5em;
     text-transform: lowercase;
 }
 
 #birdkey-bar div {
     /* flex-grow: 1; */
+    font-size: 1em;
     width: 25%;
     background-color: thistle;
     margin: 5px;
@@ -130,7 +156,7 @@ nav .birdyworld {
 }
 
 #results {
-    max-height: 700px;
+    height: 75vh;
     overflow-y: auto;
 }
 
@@ -185,7 +211,7 @@ nav .birdyworld {
     height: 100%;
     width: 95%;
     /* border-radius: 2px; */
-    margin: 150px auto;
+    margin: 100px auto;
 }
 
 #close-modal {
@@ -207,7 +233,10 @@ nav .birdyworld {
 
 #aboutbird {
     /* border-bottom: 2px solid rgba(0,0,0,0.4); */
+    font-size: 2em;
     padding-bottom: 5px;
+    margin-block-start: 0.2em;
+    margin-block-end: 0.2em;
 }
 
 #iFrame{
