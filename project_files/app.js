@@ -1,4 +1,11 @@
+
 $(() => {
+
+    //Mouse image code https://w3codemasters.in/jquery-image-follow-mouse/
+    $(document).mousemove((event) => {
+        $(".pointer").css({left: event.pageX, top: event.pageY})
+    })
+
 
     //This is to remove properties from original array of data
     const consolidate = (u) => {
@@ -34,14 +41,15 @@ $(() => {
         // console.log(results)
         for (let i = 0; i < 1; i++){ //results.length
             const $birdDiv = $('<div>').addClass('bird-div')
-            const $birdName = $('<p>').text(results[i].comName).addClass('bird-name')
-            const $birdLocation = $('<p>').text(results[i].locName).addClass('bird-location')
-            const $birdCounty = $('<p>').text(results[i].subnational2Name).addClass('bird-county')
-            const $learnMoreButton = $('<button>').text('Learn More').addClass('off').attr('id', 'openModal')
+            const $birdName = $('<p>').text(results[i].comName).addClass('bird-name').addClass('birdinfo')
+            const $birdLocation = $('<p>').text(results[i].locName).addClass('bird-location').addClass('birdinfo')
+            const $birdCounty = $('<p>').text(results[i].subnational2Name).addClass('bird-county').addClass('birdinfo')
+            const $learnMoreButton = $('<button>').text('Learn More').addClass('off').attr('id', 'openModal').addClass('birdinfo')
             const $modal = $('<div>').attr('id', 'modal')
             const $modalContent = $('<div>').attr('id', 'modal-content')
-            const $closeModal = $('<a>').attr('id', 'close').attr('href', '#').text('Close')
-            const $modalHeader = $('<h1>').text('About this bird')
+            const $closeModalDiv = $('<div>').attr('id', 'close-modal')
+            const $closeModal = $('<a>').attr('id', 'close').attr('href', '#').text('x CLOSE')
+            const $modalHeader = $('<h1>').text('about this bird').attr('id', 'aboutbird')
 
             const birdNameURL = (results[i].comName).replace(" ", "_").replace("'", "")
             // console.log(birdNameURL);
@@ -56,7 +64,8 @@ $(() => {
             $birdDiv.append($learnMoreButton)
             $birdDiv.append($modal)
             $modal.append($modalContent)
-            $modalContent.append($closeModal)
+            $modalContent.append($closeModalDiv)
+            $closeModalDiv.append($closeModal)
             $modalContent.append($modalHeader)
             $modalContent.append($modalIframe)
 

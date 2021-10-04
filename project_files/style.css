@@ -1,14 +1,136 @@
 * {
     text-align: center;
     font-family: 'Pangolin'
+
 }
 
+html {
+    cursor: default;
+    overflow: hidden;
+}
+
+.pointer {
+    position: absolute;
+    height: 10%;
+    top: 10%;
+    width: 10%;
+    left: 5%;
+    pointer-events: none;
+
+}
+
+.pointer img {
+    width: 20%;
+
+}
+
+#container {
+    margin-top: 0px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    /* border: 2px solid #7FFF00; */
+    /* height: 30px; */
+    /* background: url(https://imgix.gizmodo.com.au/content/uploads/sites/2/2020/04/22/ctdb8olk4rqkjv1kmryx.gif);
+    background-size: contain; */
+}
+nav h1 {
+    font-size: 1.5em;
+    animation: color-change 5s infinite;
+}
+
+nav .earth {
+    padding-left: 10px;
+    height: 30px;
+    width: 30px;
+}
+
+nav .birdyworld {
+    padding-right: 10px;
+    height: 40px;
+    width: 40px;
+}
+
+@keyframes color-change {
+    0% { color: #6495ED; }
+    25% { color: #FFDAB9; }
+    50% { color: #D8BFD8; }
+    75% { color: #7FFF00; }
+    100% { color: #000; }
+}
+
+#form {
+    background-color: #FFF;
+    background-color: rgba(0,0,0,0.2);
+    margin: auto;
+    padding: 1em 0;
+    width: 100%;
+}
+
+#form h2 {
+    font-size: 1.5em;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-top: 0em;
+    padding-bottom: .5em
+}
+
+
+#birdkey-bar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-top: 10px;
+}
+
+#birdkey-bar div {
+    flex-grow: 1;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
 
 .bird-div {
     display: flex;
     flex-direction: row;
+    flex-wrap: nowrap;
     align-items: center;
-    justify-content: space-evenly;
+    /* justify-content: space-between; */
+}
+
+.birdinfo {
+    flex-grow: 1;
+
+}
+
+.bird-location {
+    width: 50px;
+
 }
 
 #modal {
@@ -21,17 +143,41 @@
     z-index: 1;
     overflow: auto;
     display: none;
+
 }
 
 #modal-content{
-    background-color: white;
+    background-color: gray;
+    color: white;
+    border: 4px solid #7FFF00;
     /* height: 350px;
     width: 550px; */
     height: 100%;
-    width: 100%;
-    border-radius: 2px;
+    width: 95%;
+    /* border-radius: 2px; */
     margin: 150px auto;
-    box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+}
+
+#close-modal {
+    background-color: #7FFF00;
+    color: white;
+    text-align: left;
+    font-size: 1.5em;
+    height: 30px;
+}
+
+#close-modal a:hover {
+    color: black;
+}
+
+#close-modal a {
+    color: white;
+    text-decoration: none;
+}
+
+#aboutbird {
+    /* border-bottom: 2px solid rgba(0,0,0,0.4); */
+    padding-bottom: 5px;
 }
 
 #iFrame{
@@ -40,5 +186,4 @@
     border: none;
     display: block;
     overflow: hidden;
-
 }
