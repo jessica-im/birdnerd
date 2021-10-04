@@ -88,10 +88,13 @@ nav .birdyworld {
     align-items: center;
     justify-content: space-evenly;
     padding-top: 10px;
+    font-size: 1.5em;
+    text-transform: lowercase;
 }
 
 #birdkey-bar div {
-    flex-grow: 1;
+    /* flex-grow: 1; */
+    width: 25%;
 }
 
 .tooltip {
@@ -120,17 +123,28 @@ nav .birdyworld {
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
+    text-transform: lowercase;
     /* justify-content: space-between; */
 }
 
 .birdinfo {
     flex-grow: 1;
+}
 
+.bird-name {
+    width: 25%;
 }
 
 .bird-location {
-    width: 50px;
+    width: 25%;
+}
 
+.bird-county {
+    width: 25%;
+}
+
+.buttoncontainer {
+    width: 25%;
 }
 
 #modal {

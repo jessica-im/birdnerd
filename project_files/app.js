@@ -39,11 +39,12 @@ $(() => {
     //This is to render the data into appropriate tags
     const render = (results) => {
         // console.log(results)
-        for (let i = 0; i < 1; i++){ //results.length
+        for (let i = 0; i < 3; i++){ //results.length
             const $birdDiv = $('<div>').addClass('bird-div')
             const $birdName = $('<p>').text(results[i].comName).addClass('bird-name').addClass('birdinfo')
             const $birdLocation = $('<p>').text(results[i].locName).addClass('bird-location').addClass('birdinfo')
             const $birdCounty = $('<p>').text(results[i].subnational2Name).addClass('bird-county').addClass('birdinfo')
+            const $buttonP = $('<p>').addClass('birdinfo').addClass('buttoncontainer')
             const $learnMoreButton = $('<button>').text('Learn More').addClass('off').attr('id', 'openModal').addClass('birdinfo')
             const $modal = $('<div>').attr('id', 'modal')
             const $modalContent = $('<div>').attr('id', 'modal-content')
@@ -61,7 +62,8 @@ $(() => {
             $birdDiv.append($birdName)
             $birdDiv.append($birdLocation)
             $birdDiv.append($birdCounty)
-            $birdDiv.append($learnMoreButton)
+            $birdDiv.append($buttonP)
+            $buttonP.append($learnMoreButton)
             $birdDiv.append($modal)
             $modal.append($modalContent)
             $modalContent.append($closeModalDiv)
