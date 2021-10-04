@@ -4,6 +4,15 @@
 
 }
 
+@media (min-width: 480px) {
+
+}
+
+select {
+    font-size: 50px;
+}
+
+
 html {
     cursor: default;
     overflow: hidden;

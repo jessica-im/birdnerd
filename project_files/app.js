@@ -8,38 +8,53 @@ $(() => {
 
 
     //This is to remove properties from original array of data
-    const consolidate = (u) => {
-        u.forEach(u => {
-            delete u.speciesCode;
-            delete u.sciName;
-            delete u.locId;
-            delete u.obsDt;
-            delete u.howMany;
-            delete u.obsValid;
-            delete u.obsReviewed;
-            delete u.locationPrivate;
-            delete u.subnational2Code;
-            delete u.userDisplayName;
-            delete u.subId;
-            delete u.obsId;
-            delete u.checklistId;
-            delete u.presenceNoted;
-            delete u.hasComments;
-            delete u.firstName;
-            delete u.lastName;
-            delete u.hasRichMedia;
-            delete u.locID;
+    const consolidate = (results) => {
+        results.forEach(results => {
+            delete results.speciesCode;
+            delete results.sciName;
+            delete results.locId;
+            delete results.obsDt;
+            delete results.howMany;
+            delete results.obsValid;
+            delete results.obsReviewed;
+            delete results.locationPrivate;
+            delete results.subnational2Code;
+            delete results.userDisplayName;
+            delete results.subId;
+            delete results.obsId;
+            delete results.checklistId;
+            delete results.presenceNoted;
+            delete results.hasComments;
+            delete results.firstName;
+            delete results.lastName;
+            delete results.hasRichMedia;
+            delete results.locID;
         })
     }
 
-    //This is to remove duplicate records
+    //This is to make a string to test for duplicate records
+    const makeCompositeKey = (results) => {
+        for (let i = 0; i < results.length; i++) {
+            let compositeKey = results[i].comName + results[i].locName
+            results[i].compositeKey = compositeKey
+        }
+    }
 
+    //This is to remove duplicate records
+    // const filteredArr = results.reduce((acc, current) => {
+    //     const x = acc.find(item => item.compositeKey === current.compositeKey);
+    //     if (!x) {
+    //         return acc.concat([current]);
+    //     } else {
+    //         return acc;
+    //     }
+    // }, []);
 
 
     //This is to render the data into appropriate tags
     const render = (results) => {
         // console.log(results)
-        for (let i = 0; i < 3; i++){ //results.length
+        for (let i = 0; i < results.length; i++){ //results.length
             const $birdDiv = $('<div>').addClass('bird-div')
             const $birdName = $('<p>').text(results[i].comName).addClass('bird-name').addClass('birdinfo')
             const $birdLocation = $('<p>').text(results[i].locName).addClass('bird-location').addClass('birdinfo')
@@ -101,12 +116,16 @@ $(() => {
             (data) => {
                 // console.log(data);
                 consolidate(data)
-                // console.log(data)
-
-                // const uniqueSet = new Set(data)
-                // const newArray = [...noDataDupe]
-                // console.log(newArray);
-                render(data)
+                makeCompositeKey(data)
+                const filteredArr = data.reduce((acc, current) => {
+                    const x = acc.find(item => item.compositeKey === current.compositeKey);
+                    if (!x) {
+                        return acc.concat([current]);
+                    } else {
+                        return acc;
+                    }
+                }, []);
+                render(filteredArr)
             },
             () => {
                 console.log('bad request');
