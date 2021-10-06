@@ -65,7 +65,7 @@ $(() => {
             const birdURL = `https://www.allaboutbirds.org/guide/${birdNameURL}`
 
             // const birdURL = `https://en.wikipedia.org/wiki/${birdNameURL}`
-            const $modalIframe = $('<iframe>').attr('src', birdURL).attr('id', 'iFrame').attr('loading', 'lazy').attr('sandbox','')
+            const $modalIframe = $('<iframe>').attr('src', birdURL).attr('id', 'iFrame')
 
             // const $modalEmbed = $('<embed>').attr('src', birdURL).attr('id', 'iFrame')
 
@@ -111,7 +111,7 @@ $(() => {
             }
         ).then(
             (data) => {
-                console.log(data);
+                // console.log(data);
                 consolidate(data)
                 makeCompositeKey(data)
                 const filteredArr = data.reduce((acc, current) => {
