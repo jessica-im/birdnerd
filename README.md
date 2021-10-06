@@ -42,7 +42,7 @@ Since I wanted to test for two values, I could string that together and make a n
 I found an article that used the JS reduce and find function to check for one property, [credit](https://dev.to/marinamosti/removing-duplicates-in-an-array-of-objects-in-js-with-sets-3fep). Using the a combination of these functions, I was able to test for this composite string value I pushed into each object. If it was a duplicate, it put those objects into a separate array and left me with an original array free of duplicates.
 
 ***Alphabetize***  
-After filtering out the duplicate records, I wanted my results to show on the page in alphabetical order by County to make the it easier to sift through. I found an article that walked through the steps in alphabetizing an array of objects by one property, [credit](https://flaviocopes.com/how-to-sort-array-of-objects-by-property-javascript/) and applied this to my filtered dataset.
+After filtering out the duplicate records, I wanted my results to show on the page in alphabetical order by County to make it easier to sift through. I found an article that walked through the steps in alphabetizing an array of objects by one property, [credit](https://flaviocopes.com/how-to-sort-array-of-objects-by-property-javascript/) and applied this to my filtered dataset.
 
 ### Rendering
 
@@ -67,7 +67,6 @@ Two fun things:
 ## Link to Live Site
 
 [bird nerd](https://birdnerdalert.netlify.app/)
-
 
 ## Unsolved Problems
 

@@ -2,12 +2,10 @@
 
 $(() => {
 
-
     //Mouse image code https://w3codemasters.in/jquery-image-follow-mouse/
     $(document).mousemove((event) => {
         $(".pointer").css({left: event.pageX, top: event.pageY})
     })
-
 
     //This is to remove properties from original array of data
     const consolidate = (results) => {
@@ -42,11 +40,10 @@ $(() => {
         }
     }
 
-
     //This is to render the data into appropriate tags
     const render = (results) => {
         // console.log(results)
-        for (let i = 0; i < results.length; i++){ //results.length
+        for (let i = 0; i < results.length; i++){
             const $birdDiv = $('<div>').addClass('bird-div')
             const $birdName = $('<p>').text(results[i].comName).addClass('bird-name').addClass('birdinfo')
             const $birdLocation = $('<p>').text(results[i].locName).addClass('bird-location').addClass('birdinfo')
@@ -78,7 +75,6 @@ $(() => {
             $closeModalDiv.append($closeModal)
             $modalContent.append($modalHeader)
             // $modalContent.append($modalIframe)
-
 
             //Idea from Nolo Marsh to move iFrame creation and append to on openLearnMore function and to remove the iFrame upon closeModal
             const openLearnMore = () => {
@@ -113,6 +109,7 @@ $(() => {
         ).then(
             (data) => {
                 // console.log(data);
+
                 consolidate(data)
                 makeCompositeKey(data)
 
@@ -121,12 +118,12 @@ $(() => {
                     const x = acc.find(item => item.compositeKey === current.compositeKey);
                     if (!x) { //if the compositeKey is the same, put into another array
                         return acc.concat([current]);
-
                     } else { //else return the object
                         return acc;
                     }
                 }, []);
                 // console.log(filteredArr);
+
                 //This is to sort my results by county alphabetically and was adapted from https://flaviocopes.com/how-to-sort-array-of-objects-by-property-javascript/ it is using ternary operator where if (a.value > b.value) if true 1 if false -1.
                 filteredArr.sort((a, b) => (a.subnational2Name > b.subnational2Name) ? 1 : -1)
 
@@ -136,15 +133,10 @@ $(() => {
             () => {
                 console.log('bad request');
             }
-
         )
-
 
         $(event.currentTarget).trigger('reset', $('#results').empty())
 
-
     })
-
-
 
 })
