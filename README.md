@@ -31,18 +31,18 @@ When a user selects the state they want to search, upon the click of the submit 
 
 To make the data more user friendly for my jQuery methods, I needed to format it a bit.
 
--***Consolidate***
+***Consolidate***  
 Each object included 28 properties but the program only needed a handful. I used the JavaScript forEach function to iterate over my array and remove specific properties from each object.
 
--***Filter Duplicates***
+***Filter Duplicates***  
 Filtering out duplicates was a challenge to figure out since I was trying to test two specific values within each object. I tried to use the JS Set function on my consolidated dataset but it did not seem to work.
 
 Since I wanted to test for two values, I could string that together and make a new property and push that into the object. I used a loop to string the two values and put back into each object.
 
-I found an article that used the JS reduce and find function to check for one property [credit](https://dev.to/marinamosti/removing-duplicates-in-an-array-of-objects-in-js-with-sets-3fep). Using the a combination of these functions, I was able to test for this composite string value I pushed into each object. If it was a duplicate, it put those objects into a separate array and left me with an original array free of duplicates.
+I found an article that used the JS reduce and find function to check for one property, [credit](https://dev.to/marinamosti/removing-duplicates-in-an-array-of-objects-in-js-with-sets-3fep). Using the a combination of these functions, I was able to test for this composite string value I pushed into each object. If it was a duplicate, it put those objects into a separate array and left me with an original array free of duplicates.
 
--***Alphabetize***
-After filtering out the duplicate records, I wanted my results to show on the page in alphabetical order by County to make the it easier to sift through. I found an article that walked through the steps in alphabetizing an array of objects by one property [credit](https://flaviocopes.com/how-to-sort-array-of-objects-by-property-javascript/) and applied this to my filtered dataset.
+***Alphabetize***  
+After filtering out the duplicate records, I wanted my results to show on the page in alphabetical order by County to make the it easier to sift through. I found an article that walked through the steps in alphabetizing an array of objects by one property, [credit](https://flaviocopes.com/how-to-sort-array-of-objects-by-property-javascript/) and applied this to my filtered dataset.
 
 ### Rendering
 
@@ -54,7 +54,7 @@ Within the render function, I created click events that were applied to the moda
 
 iFrames are great because you can display a whole external website and embed it into your modal. However, they are terrible because you can run into issues with that external site's cookies. Although my iFrames all worked properly, I would encounter issues within the Chrome Dev Tools notifying me that I had not specified the SameSite attribute which direct how Cookies are to be shared. This was causing my site to crash!
 
-The best fix was an idea that Nolo Marsh came up with where I should only create and append the iFrame upon the function where I click the modal open and then upon closing the modal, remove that iFrame entirely. So, instead of iFrames being generated upon load of the results, they would only get generated upon opening the modal for each specific bird. 
+The best fix was an idea that Nolo Marsh came up with where I should only create and append the iFrame upon the function where I click the modal open and then upon closing the modal, remove that iFrame entirely. So, instead of iFrames being generated upon load of the results, they would only get generated upon opening the modal for each specific bird.
 
 
 ### Fun Things
