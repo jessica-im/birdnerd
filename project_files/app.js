@@ -119,13 +119,15 @@ $(() => {
                 //This is to filter out any duplicate bird & location and was adapted from https://dev.to/marinamosti/removing-duplicates-in-an-array-of-objects-in-js-with-sets-3fep
                 const filteredArr = data.reduce((acc, current) => {
                     const x = acc.find(item => item.compositeKey === current.compositeKey);
-                    if (!x) {
+                    if (!x) { //if the compositeKey is the same, put into another array
                         return acc.concat([current]);
-                    } else {
+
+                    } else { //else return the object
                         return acc;
                     }
                 }, []);
-                //This is to sort my results by county alphabetically and was adapted from https://flaviocopes.com/how-to-sort-array-of-objects-by-property-javascript/
+                // console.log(filteredArr);
+                //This is to sort my results by county alphabetically and was adapted from https://flaviocopes.com/how-to-sort-array-of-objects-by-property-javascript/ it is using ternary operator where if (a.value > b.value) if true 1 if false -1.
                 filteredArr.sort((a, b) => (a.subnational2Name > b.subnational2Name) ? 1 : -1)
 
                 render(filteredArr)

@@ -1,137 +1,109 @@
-@media (max-width: 480px) {
-    select {
-        font-size: 2em;
-        max-width: 90%;
-    }
-    body {
-        display: flex;
-        justify-content: center;
-        max-width: 100%;
-        max-height: 95%;
-        background-color: whitesmoke;
-        overflow-x: scroll;
-    }
-    #container {
-        max-width: 90%;
-        display: flex;
-        flex-direction: column;
-        flex-wrap: nowrap;
-        justify-content: center;
-        align-items: stretch;
-        background: thistle;
-    }
-    #results {
-        background: white;
-    }
-}
-
-
 * {
     text-align: center;
     font-family: 'Pangolin';
-    max-width: 100vw;
-    /* max-height: 80vh; */
-    /* width: 100%; */
+    margin-left: 0;
+    margin-right: 0;
 }
 
-
-html {
-    cursor: default;
-    overflow: hidden;
+body {
+    background-color: whitesmoke;
 }
+
 
 .pointer {
-    position: absolute;
-    height: 10%;
-    top: 10%;
-    width: 10%;
-    left: 5%;
-    pointer-events: none;
-
-}
-
-.pointer img {
-    width: 20%;
-
-}
-
-#container {
-    margin-top: 0px;
-    /* width: 100vw;
-    height: 100vh; */
+    display: none;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-block-start: 0em;
-    margin-block-end: 0em;
-    /* border: 2px solid #7FFF00; */
-    /* height: 30px; */
-    /* background: url(https://imgix.gizmodo.com.au/content/uploads/sites/2/2020/04/22/ctdb8olk4rqkjv1kmryx.gif);
-    background-size: contain; */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    font-size: .75rem;
+    font-weight: bolder;
+    background-color: #CCCC99;
+    height: 40px;
+    color: black;
 }
+
 nav h1 {
-    font-size: 1.5em;
     animation: color-change 5s infinite;
-    font-weight: bold;
 }
 
 nav .earth {
     padding-left: 10px;
-    height: 30px;
-    width: 30px;
+    height: 20px;
+    width: 20px;
 }
 
 nav .birdyworld {
     padding-right: 10px;
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    border-radius: 90%;
 }
 
-@keyframes color-change {
-    0% { color: #6495ED; }
-    25% { color: #FFDAB9; }
-    50% { color: #D8BFD8; }
-    75% { color: #7FFF00; }
-    100% { color: #000; }
+#container {
+    margin-top: 2em;
 }
 
 #form {
-    background-color: #FFF;
-    background-color: rgba(0,0,0,0.2);
-    margin: auto;
-    padding: 1em 0;
-    width: 100%;
+    margin-top: 50px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 #form h2 {
-    font-size: 1.5em;
-    margin-block-start: 0em;
-    margin-block-end: 0em;
-    margin-top: 0em;
-    padding-bottom: .5em
+    margin-bottom: 5px;
+}
+
+#dropdownbox {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: baseline;
 }
 
 
+select {
+    font-size: 1rem;
+    width: 65%;
+    max-width: 320px;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    border-color: #CC9999
+}
+
+#button {
+    background-color: #CC9999;
+    color: white;
+    border: 1px solid #CCCC99;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin-left: 3px;
+}
+
 #birdkey-bar {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
     justify-content: space-evenly;
-    padding-top: 10px;
-    text-transform: lowercase;
+    text-transform: uppercase;
 }
 
 #birdkey-bar div {
-    /* flex-grow: 1; */
-    font-size: 1em;
+    font-size: .8rem;
     width: 25%;
-    background-color: thistle;
-    margin: 5px;
+    background-color: #D0C1BE;
+    margin: 2px;
+    padding: 5px;
+    border-radius: 2px;
 }
 
 .tooltip {
@@ -140,12 +112,15 @@ nav .birdyworld {
 }
 
 .tooltip .tooltiptext {
+    font-size: .6rem;
+    text-transform: lowercase;
     visibility: hidden;
     width: 120px;
-    background-color: black;
-    color: #fff;
+    border: 1px solid #CCCC99;
+    background-color: whitesmoke;
+    color: #000;
     text-align: center;
-    padding: 5px 0;
+    padding: 8px;
     border-radius: 6px;
     position: absolute;
     z-index: 1;
@@ -156,8 +131,12 @@ nav .birdyworld {
 }
 
 #results {
-    height: 75vh;
-    overflow-y: auto;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 40px;
+    height: 500px;
+    overflow: hidden;
+    overflow-y: scroll;
 }
 
 .bird-div {
@@ -166,11 +145,12 @@ nav .birdyworld {
     flex-wrap: nowrap;
     align-items: center;
     text-transform: lowercase;
-    /* justify-content: space-between; */
+    border-bottom: 1px solid #CCCC99;
 }
 
 .birdinfo {
-    flex-grow: 1;
+    font-size: .7rem;
+    flex-grow: 1
 }
 
 .bird-name {
@@ -189,8 +169,15 @@ nav .birdyworld {
     width: 25%;
 }
 
+.off {
+    background-color: #CC9999;
+    color: white;
+    border: 1px solid #CCCC99;
+    border-radius: 4px;
+}
+
 #modal {
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0,0,0,0.3);
     position: fixed;
     top: 0;
     left: 0;
@@ -199,42 +186,41 @@ nav .birdyworld {
     z-index: 1;
     overflow: auto;
     display: none;
-
 }
 
 #modal-content{
-    background-color: gray;
-    color: white;
-    border: 4px solid #7FFF00;
-    /* height: 350px;
-    width: 550px; */
+    background-color: whitesmoke;
+    color: #CC9999;
+    border: 4px solid #CCCC99;
     height: 100%;
     width: 95%;
-    /* border-radius: 2px; */
-    margin: 100px auto;
+    margin: 40px auto;
+}
+
+#openModal {
+    text-transform: lowercase;
 }
 
 #close-modal {
-    background-color: #7FFF00;
-    color: white;
-    text-align: left;
-    font-size: 1.5em;
-    height: 30px;
+    background-color: #CCCC99;
+    color: black;
+    text-align: right;
+    font-size: .6rem;
+    height: 20px;
 }
 
 #close-modal a:hover {
-    color: black;
+    color: white;
 }
 
 #close-modal a {
-    color: white;
+    color: black;
     text-decoration: none;
 }
 
 #aboutbird {
-    /* border-bottom: 2px solid rgba(0,0,0,0.4); */
-    font-size: 2em;
-    padding-bottom: 5px;
+    font-size: 1rem;
+    padding-bottom: 3px;
     margin-block-start: 0.2em;
     margin-block-end: 0.2em;
 }
@@ -247,7 +233,121 @@ nav .birdyworld {
     overflow: hidden;
 }
 
-#footer{
-    font-size: 2em;
-    background-color: thistle;
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: .75rem;
+    font-weight: bolder;
+    background-color: #CCCC99;
+    height: 40px;
+    color: black;
+}
+
+footer h3 {
+
+}
+
+/* ////animations///// */
+
+@keyframes color-change {
+    0% { color: #6495ED; }
+    25% { color: #FFDAB9; }
+    50% { color: #D8BFD8; }
+    75% { color: #7FFF00; }
+    100% { color: #000; }
+}
+
+/* /////media queries///// */
+
+@media only screen and (min-width: 1000px) {
+    html {
+        cursor: default;
+        overflow: hidden;
+    }
+
+    .pointer {
+        display: block;
+        position: absolute;
+        height: 10%;
+        top: 10%;
+        width: 10%;
+        left: 5%;
+        pointer-events: none;
+    }
+
+    .pointer img {
+        width: 20%;
+    }
+
+    #container {
+        margin-top: 60px;
+    }
+
+    #form h2 {
+        font-size: 30px;
+        margin-bottom: 10px;
+    }
+
+    select {
+        max-width: 40%;
+        margin-bottom: 10px;
+        font-size: 20px;
+    }
+
+    #button {
+        font-size: 18px;
+    }
+
+    #birdkey-bar div {
+        font-size: 20px;
+    }
+
+    .birdinfo {
+        font-size: 18px;
+    }
+
+    .tooltip .tooltiptext {
+        font-size: 15px;
+        width: 150px;
+    }
+
+    #results {
+        margin-bottom: 20px;
+        height: 500px;
+    }
+
+    #modal-content{
+        background-color: whitesmoke;
+        color: #CC9999;
+        border: 4px solid #CCCC99;
+        height: 80%;
+        width: 90%;
+        margin: 40px auto;
+    }
+
+    #openModal {
+        font-size: 18px;
+        text-transform: lowercase;
+        padding: 5px 10px;
+    }
+
+    #close-modal {
+        font-size: 20px;
+        height: 30px;
+    }
+
+    #aboutbird {
+        font-size: 40px;
+    }
+
+    #iFrame{
+        height: 100%;
+        width: 100%;
+        border: none;
+        display: block;
+        overflow: hidden;
+    }
+
 }

@@ -1,0 +1,253 @@
+@media (max-width: 480px) {
+    select {
+        font-size: 2em;
+        max-width: 90%;
+    }
+    body {
+        display: flex;
+        justify-content: center;
+        max-width: 100%;
+        max-height: 95%;
+        background-color: whitesmoke;
+        overflow-x: scroll;
+    }
+    #container {
+        max-width: 90%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: stretch;
+        background: thistle;
+    }
+    #results {
+        background: white;
+    }
+}
+
+
+* {
+    text-align: center;
+    font-family: 'Pangolin';
+    max-width: 100vw;
+    /* max-height: 80vh; */
+    /* width: 100%; */
+}
+
+
+html {
+    cursor: default;
+    overflow: hidden;
+}
+
+.pointer {
+    position: absolute;
+    height: 10%;
+    top: 10%;
+    width: 10%;
+    left: 5%;
+    pointer-events: none;
+
+}
+
+.pointer img {
+    width: 20%;
+
+}
+
+#container {
+    margin-top: 0px;
+    /* width: 100vw;
+    height: 100vh; */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    /* border: 2px solid #7FFF00; */
+    /* height: 30px; */
+    /* background: url(https://imgix.gizmodo.com.au/content/uploads/sites/2/2020/04/22/ctdb8olk4rqkjv1kmryx.gif);
+    background-size: contain; */
+}
+nav h1 {
+    font-size: 1.5em;
+    animation: color-change 5s infinite;
+    font-weight: bold;
+}
+
+nav .earth {
+    padding-left: 10px;
+    height: 30px;
+    width: 30px;
+}
+
+nav .birdyworld {
+    padding-right: 10px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+@keyframes color-change {
+    0% { color: #6495ED; }
+    25% { color: #FFDAB9; }
+    50% { color: #D8BFD8; }
+    75% { color: #7FFF00; }
+    100% { color: #000; }
+}
+
+#form {
+    background-color: #FFF;
+    background-color: rgba(0,0,0,0.2);
+    margin: auto;
+    padding: 1em 0;
+    width: 100%;
+}
+
+#form h2 {
+    font-size: 1.5em;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    margin-top: 0em;
+    padding-bottom: .5em
+}
+
+
+#birdkey-bar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-top: 10px;
+    text-transform: lowercase;
+}
+
+#birdkey-bar div {
+    /* flex-grow: 1; */
+    font-size: 1em;
+    width: 25%;
+    background-color: thistle;
+    margin: 5px;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+#results {
+    height: 75vh;
+    overflow-y: auto;
+}
+
+.bird-div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    text-transform: lowercase;
+    /* justify-content: space-between; */
+}
+
+.birdinfo {
+    flex-grow: 1;
+}
+
+.bird-name {
+    width: 25%;
+}
+
+.bird-location {
+    width: 25%;
+}
+
+.bird-county {
+    width: 25%;
+}
+
+.buttoncontainer {
+    width: 25%;
+}
+
+#modal {
+    background-color: rgba(0,0,0,0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    overflow: auto;
+    display: none;
+
+}
+
+#modal-content{
+    background-color: gray;
+    color: white;
+    border: 4px solid #7FFF00;
+    /* height: 350px;
+    width: 550px; */
+    height: 100%;
+    width: 95%;
+    /* border-radius: 2px; */
+    margin: 100px auto;
+}
+
+#close-modal {
+    background-color: #7FFF00;
+    color: white;
+    text-align: left;
+    font-size: 1.5em;
+    height: 30px;
+}
+
+#close-modal a:hover {
+    color: black;
+}
+
+#close-modal a {
+    color: white;
+    text-decoration: none;
+}
+
+#aboutbird {
+    /* border-bottom: 2px solid rgba(0,0,0,0.4); */
+    font-size: 2em;
+    padding-bottom: 5px;
+    margin-block-start: 0.2em;
+    margin-block-end: 0.2em;
+}
+
+#iFrame{
+    height: 100%;
+    width: 100%;
+    border: none;
+    display: block;
+    overflow: hidden;
+}
+
+#footer{
+    font-size: 2em;
+    background-color: thistle;
+}
