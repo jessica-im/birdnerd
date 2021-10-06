@@ -245,9 +245,16 @@ footer {
     color: black;
 }
 
-footer h3 {
-
+a {
+    text-decoration: none;
+    color: #7FFF00;
 }
+
+a:hover {
+    color: black;
+}
+
+
 
 /* ////animations///// */
 
@@ -257,6 +264,10 @@ footer h3 {
     50% { color: #D8BFD8; }
     75% { color: #7FFF00; }
     100% { color: #000; }
+}
+
+@keyframes rotate {
+    100% {transform: rotateY(360deg);}
 }
 
 /* /////media queries///// */
@@ -348,6 +359,14 @@ footer h3 {
         border: none;
         display: block;
         overflow: hidden;
+    }
+
+    footer h3 {
+        animation: rotate 5s infinite;
+    }
+
+    footer h3:hover {
+        transform: scale(2);
     }
 
 }
