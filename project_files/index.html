@@ -5,7 +5,7 @@
         <title>bird nerd alert</title>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
         <script src="app.js" charset="utf-8"></script>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="teststyle.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
@@ -15,12 +15,12 @@
         <div class="pointer">
             <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/285/hatching-chick_1f423.png" class="birdMouse" alt="">
         </div>
+        <nav>
+            <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/285/globe-showing-europe-africa_1f30d.png" alt="" class="earth">
+            <h1>b i r d ._. n e r d</h1>
+            <img src="img/birdyworldlogo.jpg" alt="" class="birdyworld">
+        </nav>
         <div id="container">
-            <nav>
-                <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/285/globe-showing-europe-africa_1f30d.png" alt="" class="earth">
-                <h1>b i r d n e r d</h1>
-                <img src="img/birdyworldlogo.jpg" alt="" class="birdyworld">
-            </nav>
             <div id="form">
                 <form>
                     <h2>what rare birds are flying through your state today?</h2>
@@ -85,15 +85,35 @@
             <div id="birdkey-bar">
                 <div id="bird-name">Bird Name</div>
                 <!-- <div id="bird-location">Location</div> -->
-                <div class="tooltip">Location☼<span class="tooltiptext">The location is referencing where the bird was seen. It could be a private location like someone's home or the name of a park.</span>
+                <div class="tooltip">Location ☼<span class="tooltiptext">The location is referencing where the bird was seen. It could be a private residence or the name of a park.</span>
                 </div>
                 <div id="bird-county">County</div>
                 <div id="bird-info">Learn More</div>
             </div>
             <div id="results"></div>
-            <footer>
-
-            </footer>
+            <div id="footer">
+                <footer>
+                    <h3>birdy.world</h3>
+                </footer>
+            </div>
         </div>
     </body>
+    <!-- <script>
+        document.cookie = 'cookie1=value1; SameSite=Lax';
+        document.cookie = 'cookie2=value2; SameSite=None; Secure';
+
+        function fetchCookies(requestMethod) {
+            var req = new XMLHttpRequest();
+            req.withCredentials = true;
+            req.responseType = 'json';
+            req.open(requestMethod, "https://samesite-sandbox.glitch.me/cookies.json", true);
+            req.onload  = function() {
+               var jsonResponse = { method: requestMethod, cookies: req.response };
+               window.parent.postMessage(jsonResponse, "https://samesite-sandbox.glitch.me");
+            };
+            req.send(null);
+          }
+
+          fetchCookies('GET');
+    </script> -->
 </html>

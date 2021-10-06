@@ -1,0 +1,295 @@
+@media screen (min-width: 700px) {
+    html {
+        cursor: default;
+        overflow: hidden;
+    }
+
+    .pointer {
+        position: absolute;
+        height: 10%;
+        top: 10%;
+        width: 10%;
+        left: 5%;
+        pointer-events: none;
+    }
+
+    .pointer img {
+        width: 20%;
+    }
+
+    nav {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    nav h1 {
+        font-size: 20%;
+    }
+
+    #container {
+        margin-top: 70%;
+
+    }
+    #form {
+        margin-left: 20%;
+        margin-right: 10%;
+    }
+
+    #form h2 {
+        margin-top: 6%;
+        margin-bottom: 5px;
+    }
+
+}
+
+
+
+
+* {
+    text-align: center;
+    font-family: 'Pangolin';
+    margin-left: 0;
+    margin-right: 0;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+.pointer img {
+    height: .5px;
+    width: .5px;
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    font-size: .75rem;
+    font-weight: bolder;
+    background-color: #CCCC99;
+    height: 40px;
+    color: black;
+}
+
+nav h1 {
+    animation: color-change 5s infinite;
+}
+
+nav .earth {
+    padding-left: 10px;
+    height: 20px;
+    width: 20px;
+}
+
+nav .birdyworld {
+    padding-right: 10px;
+    height: 30px;
+    width: 30px;
+    border-radius: 90%;
+}
+
+#container {
+    margin-top: 2em;
+
+}
+
+#form {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#form h2 {
+    margin-bottom: 5px;
+}
+
+select {
+    font-size: 1rem;
+    width: 70%;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    border-color: #CC9999
+}
+
+#button {
+    background-color: #CC9999;
+    color: white;
+    border: 1px solid #CCCC99;
+    border-radius: 4px;
+}
+
+#birdkey-bar {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+    text-transform: uppercase;
+}
+
+#birdkey-bar div {
+    font-size: .8rem;
+    width: 25%;
+    background-color: #D0C1BE;
+    margin: 2px;
+    padding: 5px;
+    border-radius: 2px;
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    font-size: .6rem;
+    text-transform: lowercase;
+    visibility: hidden;
+    width: 120px;
+    border: 1px solid #CCCC99;
+    background-color: whitesmoke;
+    color: #000;
+    text-align: center;
+    padding: 8px;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+#results {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 30px;
+    height: 520px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.bird-div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    text-transform: lowercase;
+    border-bottom: 1px solid #CCCC99;
+}
+
+.birdinfo {
+    font-size: .7rem;
+    flex-grow: 1
+}
+
+.bird-name {
+    width: 25%;
+}
+
+.bird-location {
+    width: 25%;
+}
+
+.bird-county {
+    width: 25%;
+}
+
+.buttoncontainer {
+    width: 25%;
+}
+
+.off {
+    background-color: #CC9999;
+    color: white;
+    border: 1px solid #CCCC99;
+    border-radius: 4px;
+}
+
+#modal {
+    background-color: rgba(0,0,0,0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    overflow: auto;
+    display: none;
+}
+
+#modal-content{
+    background-color: whitesmoke;
+    color: #CC9999;
+    border: 4px solid #CCCC99;
+    height: 100%;
+    width: 95%;
+    margin: 40px auto;
+}
+
+#close-modal {
+    background-color: #CCCC99;
+    color: black;
+    text-align: right;
+    font-size: .6rem;
+    height: 20px;
+}
+
+#close-modal a:hover {
+    color: white;
+}
+
+#close-modal a {
+    color: black;
+    text-decoration: none;
+}
+
+#aboutbird {
+    font-size: 1rem;
+    padding-bottom: 3px;
+    margin-block-start: 0.2em;
+    margin-block-end: 0.2em;
+}
+
+#iFrame{
+    height: 100%;
+    width: 100%;
+    border: none;
+    display: block;
+    overflow: hidden;
+}
+
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: .75rem;
+    font-weight: bolder;
+    background-color: #CCCC99;
+    height: 40px;
+    color: black;
+}
+
+footer h3 {
+
+}
+
+/* ////animations///// */
+
+@keyframes color-change {
+    0% { color: #6495ED; }
+    25% { color: #FFDAB9; }
+    50% { color: #D8BFD8; }
+    75% { color: #7FFF00; }
+    100% { color: #000; }
+}
+
+/* /////media queries///// */

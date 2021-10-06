@@ -1,5 +1,7 @@
 
+
 $(() => {
+
 
     //Mouse image code https://w3codemasters.in/jquery-image-follow-mouse/
     $(document).mousemove((event) => {
@@ -40,16 +42,6 @@ $(() => {
         }
     }
 
-    //This is to remove duplicate records
-    // const filteredArr = results.reduce((acc, current) => {
-    //     const x = acc.find(item => item.compositeKey === current.compositeKey);
-    //     if (!x) {
-    //         return acc.concat([current]);
-    //     } else {
-    //         return acc;
-    //     }
-    // }, []);
-
 
     //This is to render the data into appropriate tags
     const render = (results) => {
@@ -69,8 +61,13 @@ $(() => {
 
             const birdNameURL = (results[i].comName).replace(" ", "_").replace("'", "")
             // console.log(birdNameURL);
+
             const birdURL = `https://www.allaboutbirds.org/guide/${birdNameURL}`
-            const $modalIframe = $('<iframe>').attr('src', birdURL).attr('id', 'iFrame')
+
+            // const birdURL = `https://en.wikipedia.org/wiki/${birdNameURL}`
+            const $modalIframe = $('<iframe>').attr('src', birdURL).attr('id', 'iFrame').attr('loading', 'lazy').attr('sandbox','')
+
+            // const $modalEmbed = $('<embed>').attr('src', birdURL).attr('id', 'iFrame')
 
 
             $('#results').append($birdDiv)
@@ -114,7 +111,7 @@ $(() => {
             }
         ).then(
             (data) => {
-                // console.log(data);
+                console.log(data);
                 consolidate(data)
                 makeCompositeKey(data)
                 const filteredArr = data.reduce((acc, current) => {
@@ -127,6 +124,7 @@ $(() => {
                 }, []);
                 filteredArr.sort((a, b) => (a.subnational2Name > b.subnational2Name) ? 1 : -1)
                 render(filteredArr)
+
             },
             () => {
                 console.log('bad request');
