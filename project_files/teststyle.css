@@ -9,11 +9,6 @@ body {
     background-color: whitesmoke;
 }
 
-/* .pointer img {
-    height: .5px;
-    width: .5px;
-    margin: 0;
-} */
 
 .pointer {
     display: none;
@@ -138,8 +133,8 @@ select {
 #results {
     margin-left: 10px;
     margin-right: 10px;
-    margin-bottom: 30px;
-    height: 520px;
+    margin-bottom: 40px;
+    height: 500px;
     overflow: hidden;
     overflow-y: scroll;
 }
@@ -182,7 +177,7 @@ select {
 }
 
 #modal {
-    background-color: rgba(0,0,0,0.2);
+    background-color: rgba(0,0,0,0.3);
     position: fixed;
     top: 0;
     left: 0;
@@ -298,14 +293,23 @@ footer h3 {
     select {
         max-width: 40%;
         margin-bottom: 10px;
+        font-size: 20px;
+    }
+
+    #button {
+        font-size: 18px;
     }
 
     #birdkey-bar div {
         font-size: 20px;
     }
 
-    .bird-div p {
-        font-size: 15px;
+    /* .bird-div p {
+        font-size: 18px;
+    } */
+
+    .birdinfo {
+        font-size: 18px;
     }
 
     .tooltip .tooltiptext {
@@ -313,8 +317,22 @@ footer h3 {
         width: 150px;
     }
 
+    #results {
+        margin-bottom: 20px;
+        height: 500px;
+    }
+
+    #modal-content{
+        background-color: whitesmoke;
+        color: #CC9999;
+        border: 4px solid #CCCC99;
+        height: 80%;
+        width: 90%;
+        margin: 40px auto;
+    }
+
     #openModal {
-        font-size: 15px;
+        font-size: 18px;
         text-transform: lowercase;
         padding: 5px 10px;
     }
@@ -326,6 +344,14 @@ footer h3 {
 
     #aboutbird {
         font-size: 40px;
+    }
+
+    #iFrame{
+        height: 100%;
+        width: 100%;
+        border: none;
+        display: block;
+        overflow: hidden;
     }
 
 }

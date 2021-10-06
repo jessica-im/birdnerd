@@ -64,11 +64,7 @@ $(() => {
 
             const birdURL = `https://www.allaboutbirds.org/guide/${birdNameURL}`
 
-            // const birdURL = `https://en.wikipedia.org/wiki/${birdNameURL}`
-            const $modalIframe = $('<iframe>').attr('src', birdURL).attr('id', 'iFrame')
-
-            // const $modalEmbed = $('<embed>').attr('src', birdURL).attr('id', 'iFrame')
-
+            // const $modalIframe = $('<iframe>').attr('src', birdURL).attr('id', 'iFrame')
 
             $('#results').append($birdDiv)
             $birdDiv.append($birdName)
@@ -81,18 +77,23 @@ $(() => {
             $modalContent.append($closeModalDiv)
             $closeModalDiv.append($closeModal)
             $modalContent.append($modalHeader)
-            $modalContent.append($modalIframe)
+            // $modalContent.append($modalIframe)
 
 
+            //Idea from Nolo Marsh to move iFrame creation and append to on openLearnMore function and to remove the iFrame upon closeModal
             const openLearnMore = () => {
+                const $modalIframe = $('<iframe>').attr('src', birdURL).attr('id', 'iFrame')
+                $modalContent.append($modalIframe)
                 $modal.css('display', 'block')
             }
             const closeModal = () => {
                 $modal.css('display', 'none')
+                $modalContent.remove($modalIframe)
             }
 
             $learnMoreButton.on('click', openLearnMore)
             $closeModal.on('click', closeModal)
+
         }
     }
 
@@ -145,14 +146,3 @@ $(() => {
 
 
 })
-
-
-//This is to take the bird name, switch spaces to underscores, and pop into the end of URL
-// const websiteLink = () => {
-//
-// }
-
-//This is to make the modal toggle open and close
-// const modalToggle = () => {
-//
-// }

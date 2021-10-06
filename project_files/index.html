@@ -100,22 +100,4 @@
             </div>
         </div>
     </body>
-    <!-- <script>
-        document.cookie = 'cookie1=value1; SameSite=Lax';
-        document.cookie = 'cookie2=value2; SameSite=None; Secure';
-
-        function fetchCookies(requestMethod) {
-            var req = new XMLHttpRequest();
-            req.withCredentials = true;
-            req.responseType = 'json';
-            req.open(requestMethod, "https://samesite-sandbox.glitch.me/cookies.json", true);
-            req.onload  = function() {
-               var jsonResponse = { method: requestMethod, cookies: req.response };
-               window.parent.postMessage(jsonResponse, "https://samesite-sandbox.glitch.me");
-            };
-            req.send(null);
-          }
-
-          fetchCookies('GET');
-    </script> -->
 </html>
