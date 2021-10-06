@@ -5,7 +5,7 @@ Rare birds at your fingertips!
 
 Do you find yourself looking out the window, daydreaming often? During these daydreams, do you ever wonder what rare birds are flying through my state today? I know I do.
 
-With Bird Nerd, you can get a current list of the notable\* birds that were observed in your state by your fellow bird nerds. As an enthusiastic birder, the desire to "catch (see) them all" is all too important! Bird Nerd helps to keep me up to date with notable sightings that I can zoom off to.
+With Bird Nerd, you can get a current list of the notable\* birds that were observed in your state by your fellow bird nerds. As an enthusiastic birder, the desire to "catch (see) them all" is all too important! Bird Nerd helps to keep me up to date with notable sightings that I can quickly zoom off to.
 
 \*According to the [eBird API](https://documenter.getpostman.com/view/664302/S1ENwy59?version=latest#intro), notable observations can be for locally or nationally rare species or are otherwise unusual, e.g. over-wintering birds in a species which is normally only a summer visitor.
 
@@ -25,7 +25,7 @@ Bird Nerd works by utilizing an API via eBird, an application where birders can 
 
 ### Creating a Dynamic Ajax URL
 
-When a user selects the state they want to search, upon the click of the submit button, the value of the state dropdown will be assigned to a variable. That variable is then used within the API URL to get just that state's data.
+When a user selects the state they want to search, upon the click of the submit button, the value of the state dropdown will be assigned to a variable. That variable is then used within the API URL to get just that state's data. The API URL also used a query parameter to only fetch results from the past 24 hours.
 
 ### Formatting the Data
 
@@ -52,7 +52,7 @@ Within the render function, I created click events that were applied to the moda
 
 ### iFrames
 
-iFrames are great because you can display a whole external website and embed it into your modal. However, they are terrible because you can run into issues with that external site's cookies. Although my iFrames all worked properly, I would encounter issues within the Chrome Dev Tools notifying me that I had not specified the SameSite attribute which direct how Cookies are to be shared. This was causing my site to crash!
+iFrames are great because you can display a whole external website and embed it into your modal. However, they are terrible because you can run into issues with that external site's cookies. Although my iFrames all worked properly, I encountered issues within the Chrome Dev Tools notifying me that I had not specified the SameSite attribute which directs how Cookies are to be shared. This was causing my app to crash!
 
 The best fix was an idea that Nolo Marsh came up with where I should only create and append the iFrame upon the function where I click the modal open and then upon closing the modal, remove that iFrame entirely. So, instead of iFrames being generated upon load of the results, they would only get generated upon opening the modal for each specific bird.
 
@@ -62,7 +62,7 @@ Two fun things:
 
 1. A little chick trailing the cursor. I did this through using the jQuery mousemove event, and attaching an image to it. This only shows up when the \@media query hits a min-width of 1000px.
 
-2. A fun animation to my site's name to have it change colors.
+2. A fun animations to my app's nav and footer.
 
 ## Link to Live Site
 
