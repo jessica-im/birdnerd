@@ -114,6 +114,8 @@ $(() => {
                 // console.log(data);
                 consolidate(data)
                 makeCompositeKey(data)
+
+                //This is to filter out any duplicate bird & location and was adapted from https://dev.to/marinamosti/removing-duplicates-in-an-array-of-objects-in-js-with-sets-3fep
                 const filteredArr = data.reduce((acc, current) => {
                     const x = acc.find(item => item.compositeKey === current.compositeKey);
                     if (!x) {
@@ -122,7 +124,9 @@ $(() => {
                         return acc;
                     }
                 }, []);
+                //This is to sort my results by county alphabetically and was adapted from https://flaviocopes.com/how-to-sort-array-of-objects-by-property-javascript/
                 filteredArr.sort((a, b) => (a.subnational2Name > b.subnational2Name) ? 1 : -1)
+
                 render(filteredArr)
 
             },
