@@ -7,37 +7,29 @@ $(() => {
         $(".pointer").css({left: event.pageX, top: event.pageY})
     })
 
-    // This is to remove properties from original array of data
-    const consolidate = (results) => {
-        results.forEach(results => {
-            delete results.speciesCode;
-            delete results.sciName;
-            delete results.locId;
-            delete results.obsDt;
-            delete results.howMany;
-            delete results.obsValid;
-            delete results.obsReviewed;
-            delete results.locationPrivate;
-            delete results.subnational2Code;
-            delete results.userDisplayName;
-            delete results.subId;
-            delete results.obsId;
-            delete results.checklistId;
-            delete results.presenceNoted;
-            delete results.hasComments;
-            delete results.firstName;
-            delete results.lastName;
-            delete results.hasRichMedia;
-            delete results.locID;
-        })
-    }
-
     //This is to make a string to test for duplicate records
     const makeCompositeKey = (results) => {
         for (let i = 0; i < results.length; i++) {
             let compositeKey = results[i].comName + results[i].locName
             results[i].compositeKey = compositeKey
         }
+    }
+
+    const filterDupes = (results) => {
+        results.reduce((acc, current) => {
+            const x = acc.find(item => item.compositeKey === current.compositeKey);
+            if (!x) { //if the compositeKey is the same, put into another array
+                return acc.concat([current]);
+                console.log([]);
+            } else { //else return the object
+                return acc;
+            }
+        }, []);
+    }
+
+    //This is to sort the results by county alphabetically
+    const sortAlpha = (filteredArr) => {
+        filteredArr.sort((a, b) => (a.subnational2Name > b.subnational2Name) ? 1 : -1)
     }
 
     //This is to render the data into appropriate tags
@@ -55,13 +47,10 @@ $(() => {
             const $closeModalDiv = $('<div>').attr('id', 'close-modal')
             const $closeModal = $('<a>').attr('id', 'close').attr('href', '#').text('x CLOSE')
             const $modalHeader = $('<h1>').text('about this bird').attr('id', 'aboutbird')
-
             const birdNameURL = (results[i].comName).replace(" ", "_").replace("'", "")
-            // console.log(birdNameURL);
-
             const birdURL = `https://www.allaboutbirds.org/guide/${birdNameURL}`
+            const $modalIframe = $('<iframe>').attr('src', birdURL).attr('id', 'iFrame')
 
-            // const $modalIframe = $('<iframe>').attr('src', birdURL).attr('id', 'iFrame')
 
             $('#results').append($birdDiv)
             $birdDiv.append($birdName)
@@ -74,18 +63,16 @@ $(() => {
             $modalContent.append($closeModalDiv)
             $closeModalDiv.append($closeModal)
             $modalContent.append($modalHeader)
-            // $modalContent.append($modalIframe)
+
 
             //Idea from Nolo Marsh to move iFrame creation and append to on openLearnMore function and to remove the iFrame upon closeModal
             const openLearnMore = () => {
-                const $modalIframe = $('<iframe>').attr('src', birdURL).attr('id', 'iFrame')
                 $modalContent.append($modalIframe)
                 $modal.css('display', 'block')
             }
             const closeModal = () => {
                 $modal.css('display', 'none')
-                $modalContent.remove($modalIframe)
-                // $modalContent.empty($modal)
+                $modalIframe.remove()
             }
 
             $learnMoreButton.on('click', openLearnMore)
@@ -98,8 +85,6 @@ $(() => {
         event.preventDefault()
 
         const $userInput = $('select').val()
-        // console.log($userInput);
-
 
         $.ajax(
             {
@@ -109,12 +94,8 @@ $(() => {
             }
         ).then(
             (data) => {
-                // console.log(data);
 
-                consolidate(data)
                 makeCompositeKey(data)
-
-                //This is to filter out any duplicate bird & location and was adapted from https://dev.to/marinamosti/removing-duplicates-in-an-array-of-objects-in-js-with-sets-3fep
                 const filteredArr = data.reduce((acc, current) => {
                     const x = acc.find(item => item.compositeKey === current.compositeKey);
                     if (!x) { //if the compositeKey is the same, put into another array
@@ -124,11 +105,7 @@ $(() => {
                         return acc;
                     }
                 }, []);
-                console.log(filteredArr);
-
-                //This is to sort my results by county alphabetically and was adapted from https://flaviocopes.com/how-to-sort-array-of-objects-by-property-javascript/ it is using ternary operator where if (a.value > b.value) if true 1 if false -1.
-                filteredArr.sort((a, b) => (a.subnational2Name > b.subnational2Name) ? 1 : -1)
-
+                sortAlpha(filteredArr)
                 render(filteredArr)
 
             },
