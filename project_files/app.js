@@ -84,7 +84,8 @@ $(() => {
             }
             const closeModal = () => {
                 $modal.css('display', 'none')
-                $modalContent.remove($modalIframe)
+                remove($modalIframe)
+                // $modalContent.empty($modal)
             }
 
             $learnMoreButton.on('click', openLearnMore)
