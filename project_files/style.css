@@ -128,7 +128,7 @@ select {
     visibility: visible;
 }
 
-.tooltipLM .tooltiptextLM {
+.tooltipAbout .tooltiptextAbout {
     font-size: .6rem;
     text-transform: lowercase;
     visibility: hidden;
@@ -139,14 +139,22 @@ select {
     text-align: center;
     padding: 5px;
     border-radius: 6px;
+    top: 105px;
+    right: 45px;
     position: absolute;
-    top: 180px;
-    right: 10px;
     z-index: 1;
 }
 
-.tooltipLM:hover .tooltiptextLM {
+.tooltipAbout:hover .tooltiptextAbout {
     visibility: visible;
+}
+
+.tooltiptextAbout a {
+    color: #6495ED
+}
+
+.tooltiptextAbout a:hover {
+    color: #7FFF00
 }
 
 #results {
@@ -343,9 +351,18 @@ a:hover {
         width: 150px;
     }
 
-    .tooltipLM .tooltiptextLM {
-        font-size: 15px;
-        width: 120px;
+    .tooltipAbout .tooltiptextAbout {
+        font-size: 20px;
+        padding: 10px;
+        width: 170px;
+    }
+
+    .tooltiptextAbout a {
+        color: #6495ED
+    }
+
+    .tooltiptextAbout a:hover {
+        color: #7FFF00
     }
 
     #results {
